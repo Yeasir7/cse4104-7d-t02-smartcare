@@ -1,7 +1,7 @@
-# Chopper-HealthCare: AI-Powered Medical Appointment & Triage System
+# SmartCare: AI-Powered Medical Appointment & Triage System
 
 ## 🏥 Project Overview
-Chopper-HealthCare is a production-grade, multi-tenant healthcare management system designed to bridge the gap between patients and the correct medical specialists. By integrating a natural language AI triage assistant, the platform analyzes patient symptoms pre-booking to prevent misrouted appointments. The system handles the entire clinical lifecycle: AI triage, smart scheduling, secure Stripe payments, telemedicine consultations, and automated PDF prescription generation.
+Smart-Care is a production-grade, multi-tenant healthcare management system designed to bridge the gap between patients and the correct medical specialists. By integrating a natural language AI triage assistant, the platform analyzes patient symptoms pre-booking to prevent misrouted appointments. The system handles the entire clinical lifecycle: AI triage, smart scheduling, secure Stripe payments, telemedicine consultations, and automated PDF prescription generation.
 
 ## 👥 Team Information (CSE4104-7D-T01)
 * **Yeasir Ibna Zahir** (11230121177) - Team Leader / Architect
