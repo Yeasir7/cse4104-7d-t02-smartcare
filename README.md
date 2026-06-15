@@ -7,9 +7,9 @@ Smart-Care is a production-grade, multi-tenant healthcare management system desi
 ## 👥 Team Information (CSE4104-7D-T01)
 
 - **Yeasir Ibna Zahir** (11230121177) - Team Leader / Architect
-- **Syed Labibul Islam** (1123012183) - Backend Engineering
+- **Sadia Sultana Tamanna** (11230121201) - Backend Engineering
 - **Rufida Khan Roshni** (11230121200) - Frontend Development
-- **Sadia Sultana Tamanna** (11230121201) - AI & External Integrations
+- **Syed Labibul Islam** (1123012183) - AI & External Integrations
 
 ## ✨ Proposed Features
 
