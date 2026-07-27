@@ -6,11 +6,7 @@ export const catchAsync = (fn : RequestHandler) =>{
             await fn(req,res,next)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error: any) {
-          res.status(500).json({
-            success: false,
-            message: "failed to fetch",
-            data: error.message,
-          });
+          next(error)
         }
     }
 }

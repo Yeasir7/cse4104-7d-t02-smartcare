@@ -1,4 +1,7 @@
+import status from "http-status";
+import AppError from "../../errorHelpers/AppError";
 import { auth } from "../../lib/auth";
+import { prisma } from "../../lib/prisma";
 
 interface IRegisterPatientPayload {
     email : string,
@@ -17,9 +20,34 @@ const registerPatient = async (payload: IRegisterPatientPayload) => {
         }
     })
     if(!data.user){
-        throw new Error("failed to register")
+        throw new AppError(status.BAD_REQUEST, "failed to register patient")
     }
-    return data;
+    // console.log(data);
+    try{
+        const patient = await prisma.$transaction(async (tx) => {
+          const txPatient = await tx.patient.create({
+            data: {
+              userId: data.user.id,
+              name,
+              email,
+            },
+          });
+          return txPatient;
+        });
+        return {
+          ...data,
+          patient,
+        };
+    }catch(error){
+        console.log("Transaction error",error);
+        await prisma.user.delete({
+            where:{
+                id : data.user.id
+            }
+            
+        })
+        throw error;
+    }
 };
 
 interface ILoginUserPayload {

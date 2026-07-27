@@ -1,6 +1,8 @@
 import express, { Application, Request, Response } from "express";
 import { prisma } from "./app/lib/prisma";
 import { indexRoutes } from "./app/routes";
+import { globalErrorHandler } from "./app/middleware/globalErrorHandler";
+import { notFound } from "./app/middleware/not-found";
 
 const app: Application = express();
 
@@ -16,7 +18,7 @@ app.use("/api/vi", indexRoutes);
 app.get("/", async(req: Request, res: Response) => {
   const specialty = await prisma.specialty.create({
     data:{
-        title: "hello2"
+        title: "hello4"
     }
   })
   res.status(201).json({
@@ -25,5 +27,8 @@ app.get("/", async(req: Request, res: Response) => {
     data: specialty 
   })
 });
+
+app.use(notFound);
+app.use(globalErrorHandler);
 
 export default app;
